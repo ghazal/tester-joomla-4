@@ -37,8 +37,13 @@ Le gestionnaire de paquets pour macOS — Homebrew
 
 https://brew.sh/index_fr
 
-La commande d'installation à copier coller dans le Terminal:
+La commande d'installation de Homebrew à copier coller dans le Terminal:
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+### Commande pour installer Git via Homebrew
+
+```
+brew install git
+```
