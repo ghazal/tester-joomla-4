@@ -1,8 +1,12 @@
-# tester-joomla-4
+# Tester-joomla-4
 Tester Joomla 4 avec Composer et Node/NPM
+
+Ce tuto porte essentiellement sur un environnement macOS. 
+Je ne peux donner que des pistes pour les autres OS.
 
 Pour tester Joomla 4 avec ses dépendances, on a besoin d'un outil indispensable:
 un Terminal.
+
 
 ### Pour macOS
 
@@ -38,7 +42,6 @@ Après pas mal de tâtonnements, j'ai finalement choisi de passer par [Homebrew]
 [Le gestionnaire de paquets pour macOS — Homebrew](https://brew.sh/index_fr)
 
 
-
 * La commande d'installation de Homebrew à copier coller dans le Terminal:
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -70,9 +73,104 @@ Il est à noter que la commande `-g` - pour "globally" - n'apparaît pas dans ce
 
 Avant de passer par Homebrew, je trouvais plein de posts où l'on conseillait de faire un [sudo](https://www.wikiwand.com/fr/Sudo) pour récupérer les droits `root` en tant qu'admin système. Pas très recommandé pour macOS.
 
-### pour Windows et Linux
+#### Astuce
+
+On peut mettre à jour Homebrew, Node et NPM avec une seule commande :
+
+```
+brew update && brew upgrade node && npm update -g npm
+```
+
+### pour Windows
+
+#### Installer Git
 
 Ce tuto me paraît approprié :
 
-Installing Git on Linux, Mac OS X and Windows
-https://gist.github.com/derhuerst/1b15ff4652a867391f03
+[Installing Git on Linux, Mac OS X and Windows](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+
+#### Installer Node et NPM
+
+[How to Install Node.js® and NPM on Windows](https://blog.teamtreehouse.com/install-node-js-npm-windows) 
+
+
+[Install Node.js and NPM on Windows](https://wsvincent.com/install-node-js-npm-windows/) 
+
+### pour Linux	
+
+#### Installer Git
+Même tuto que plus haut :
+
+[Installing Git on Linux, Mac OS X and Windows](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+
+
+#### Installer Node et NPM
+[How to Install Node.js and NPM on Linux](https://blog.teamtreehouse.com/install-node-js-npm-linux) 
+
+## Installer Joomla 4
+
+1 - Créer un dossier - testj4, par exemple - sur le serveur local.
+
+2 - Dans le Terminal, définir le chemin vers le répertoire d'installation sur le serveur, en principe /htdocs/. 
+
+* pour MAMP
+
+		cd /Applications/MAMP/htdocs/testj4
+
+* pour Bitnami
+
+		cd /Applications/mampstack-[versionPHP]/apache2/htdocs/testj4
+		
+3 - Télécharger Joomla 4 via la command line
+
+	git clone --depth=1 -b 4.0-dev https://github.com/joomla/joomla-cms/
+
+C'est très rapide, et une fois l'opération terminée, on verra apparaître un dossier /joomla-cms/ dans /testj4/.
+
+Pas la peine de déplacer /joomla-cms/, il suffit d'indiquer le bon chemin :
+
+		cd joomla-cms
+		
+4 - Installer Composer
+
+Il n'est pas nécessaire d'installer Composer `globally`.
+Les fichiers `composer.json` et `composer.lock` sont là pour faire le job.
+
+Commande pour installer Composer :
+
+		composer install
+
+Quand on voit `Generating optimized autoload files`, c'est bon.
+		
+5 - Installer NPM
+
+Commande pour installer NPM :
+
+		npm ci
+
+Il y a plusieurs commandes pour installer NPM dans un répertoire, celle-ci est recommandée par les développeurs de Joomla.
+
+Une définition dans la doc NPM :
+
+[npm-ci | npm Documentation](https://docs.npmjs.com/cli/ci.html)
+
+6 - A cette étape, aller boire un café, discuter avec son voisin, ça peut prendre un moment.
+
+Les fichiers des paquets contenus dans NPM s'installent dans un dossier /node_modules/, puis, à l'aide de ces fichiers, les scripts Joomla installent tous les fichiers sass, css, js dans les bons dossiers.
+
+7 - Quand tout est fini, si tout s'est bien passé, on voit :
+
+`Testing binary`
+
+`Binary is fine`
+
+
+puis, plus bas :
+
+`added 1010 packages in 300.388s`
+
+... et on est content.
+
+## Dernière étape
+
+A partir de là, on peut installer Joomla 4 classiquement sur le serveur.
