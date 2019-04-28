@@ -73,6 +73,7 @@ Il est à noter que la commande `-g` - pour "globally" - n'apparaît pas dans ce
 
 Avant de passer par Homebrew, je trouvais plein de posts où l'on conseillait de faire un [sudo](https://www.wikiwand.com/fr/Sudo) pour récupérer les droits `root` en tant qu'admin système. Pas très recommandé pour macOS.
 
+
 #### Astuce
 
 On peut mettre à jour Homebrew, Node et NPM avec une seule commande :
