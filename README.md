@@ -218,3 +218,7 @@ files = [
 * deux fichiers nouvellement et automatiquement créés seront alors visibles dans le dossier /css/ du template :
 
  mycustom.css et mycustom.min.css
+
+Postez dans Issues si vous avez des commentaires.
+
+Post in Issues if you have comments.
