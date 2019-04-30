@@ -212,7 +212,7 @@ files = [
 ```
         
 * rajouter l'appel au fichier mycustom.scss ligne 4, comme il est visible  sur cette liste
-* après avoir intégré les modifs voulues, appliquer la commande :
+* après avoir intégré les modifs voulues dans le fichier mycustom.scss, appliquer la commande :
  `npm run build:css`
 * deux fichiers nouvellement et automatiquement créés seront alors visibles dans le dossier /css/ du template :
 
