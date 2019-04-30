@@ -190,7 +190,23 @@ ou
 
 Ces commandes vont chercher les modifications et mettre à jour les fichiers concernés.
 
-#### Exemple d'utilisation de `npm run build:css`
+#### Exemple d'utilisation de `npm run build:css` pour template.css
+
+* Dans le dossier /scss/, chercher et corriger le style à modifier dans les différents fichiers .scss
+* appliquer la commande :
+ 
+ `npm run build:css`
+ 
+ La correction sera automatiquement affectée à :
+ 
+ template.css
+ 
+ et
+ 
+ template.min.css
+
+
+#### Exemple d'utilisation de `npm run build:css` pour un nouveau fichier
 
 * créer un fichier mycustom.scss dans le dossier /scss/ du template
 * ouvrir le fichier build/build-modules-js/compilecss.es6.js
@@ -212,12 +228,37 @@ files = [
 ```
         
 * rajouter l'appel au fichier mycustom.scss ligne 4, comme il est visible  sur cette liste
-* après avoir intégré les modifs voulues dans le fichier mycustom.scss, appliquer la commande :
+* après avoir intégré les modifs voulues, appliquer la commande :
 
  `npm run build:css`
 * deux fichiers nouvellement et automatiquement créés seront alors visibles dans le dossier /css/ du template :
 
  mycustom.css et mycustom.min.css
+ 
+#### Exemple d'utilisation de `npm run build:js` 
+ 
+ Si vous avez une proposition d'amélioration de script JS, les scripts à modifier sont en  `es6.js`, ou ecmascript v.6, et se trouvent dans les dossiers :
+ 
+` /build/media_source/`
+
+* modfier le script 
+* appliquer la commande :
+
+`npm run build:js`
+ 
+## Proposer un PR (Pull Request) sur github
+
+Le tuto qui m'a le plus aidée est celui de Valentin Garcia :
+
+[How to Contribute to Joomla through Github](https://extensions.joomla.org/blog/item/how-to-contribute-to-joomla-through-github/)
+
+### Important
+
+Faire attention à choisir la bonne "branch", c'est à dire 4.0-dev avant de "commit".
+
+![Choisir la bonne branche](choix-de-branch.png "La bonne branche")
+
+
 
 Postez dans Issues si vous avez des commentaires.
 
