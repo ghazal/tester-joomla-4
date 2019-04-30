@@ -189,3 +189,31 @@ ou
 `npm run build:js`
 
 Ces commandes vont chercher les modifications et mettre à jour les fichiers concernés.
+
+#### Exemple d'utilisation de `npm run build:css`
+
+* créer un fichier mycustom.scss dans le dossier /scss/ du template
+* ouvrir le fichier build/build-modules-js/compilecss.es6.js
+* vers la ligne 42, on trouve une liste de fichiers à compiler :
+
+```
+files = [
+          `${RootPath}/templates/cassiopeia/scss/offline.scss`,
+          `${RootPath}/templates/cassiopeia/scss/template.scss`,
+          `${RootPath}/templates/cassiopeia/scss/template-rtl.scss`,
+            `${RootPath}/templates/cassiopeia/scss/mycustom.scss`,
+          `${RootPath}/administrator/templates/atum/scss/bootstrap.scss`,
+          `${RootPath}/administrator/templates/atum/scss/fontawesome.scss`,
+          `${RootPath}/administrator/templates/atum/scss/template.scss`,
+          `${RootPath}/administrator/templates/atum/scss/template-rtl.scss`,
+          `${RootPath}/installation/template/scss/template.scss`,
+          `${RootPath}/installation/template/scss/template-rtl.scss`,
+        ];
+```
+        
+* rajouter l'appel au fichier mycustom.scss ligne 4, comme il est visible  sur cette liste
+* après avoir intégré les modifs voulues, appliquer la commande :
+ `npm run build:css`
+* deux fichiers nouvellement et automatiquement créés seront alors visibles dans le dossier /css/ du template :
+
+ mycustom.css et mycustom.min.css
