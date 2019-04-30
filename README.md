@@ -177,3 +177,15 @@ puis, plus bas :
 ## Dernière étape
 
 A partir de là, on peut installer Joomla 4 classiquement sur le serveur.
+
+## Les commandes internes
+
+Une fois Joomla 4 correctement installé sur le serveur, on peut utiliser les commandes suivantes si on modifie un fichier .scss ou .js :
+
+`npm run watch:css`
+
+ou
+
+`npm run build:js`
+
+Ces commandes vont chercher les modifications et mettre à jour les fichiers concernés.
