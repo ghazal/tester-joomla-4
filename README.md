@@ -17,6 +17,14 @@ J'utilise iTerm2 pour macOS, une alternative performante au Terminal natif de ma
 
 ### Pour Windows
 
+Microsoft vient de sortir un Terminal développé par ses soins:
+
+[Windows Terminal](https://github.com/microsoft/terminal)
+
+Lire les attentivement les explications sur Github, il existe quelques restrictions.
+
+[FAQ sur Github](https://github.com/microsoft/terminal)
+
 [PuTTY - a free SSH and telnet client for Windows](https://www.putty.org/)
 
 
