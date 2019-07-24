@@ -141,7 +141,19 @@ C'est très rapide, et une fois l'opération terminée, on verra apparaître un 
 Pas la peine de déplacer /joomla-cms/, il suffit d'indiquer le bon chemin :
 
 		cd joomla-cms
-		
+
+3bis - Tester un pull request
+
+Pour proposer une modif du code, on doit créer un fork du repo original. En d'autres termes, un clone de joomla-cms.
+Pour tester, on peut aller le chercher via la command line 
+
+ou
+
+le récupérer sur issues.joomla.org, comme sur l'image.
+
+
+![demo sur Issues](issues_demo.png "Démo sur Issues")
+
 4 - Installer Composer
 
 Il n'est pas nécessaire d'installer Composer `globally`.
